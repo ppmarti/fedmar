@@ -23,13 +23,13 @@
       "id": "Morris",
       "height": 50,
       "fill": {
-        "src": "https://awoiaf.westeros.org/images/thumb/d/d5/House_Lannister.svg/500px-House_Lannister.svg.png"
+        "src": "person.webp"
       }
     },        {
       "id": "Cluster algebras",
       "height": 50,
       "fill": {
-        "src": "https://awoiaf.westeros.org/images/thumb/d/d5/House_Lannister.svg/500px-House_Lannister.svg.png"
+        "src": "idea.webp"
       }
     },  {
       "id": "Associahedra",
@@ -133,21 +133,21 @@
       "id": "Qadi",
       "height": 50,
       "fill": {
-        "src": "https://awoiaf.westeros.org/images/9/94/Tomasz_Jedruszek_Wildling_Rabble.jpg"
+        "src": "person.webp"
       }
     },
     {
       "id": "Peyen",
       "height": 50,
       "fill": {
-        "src": "https://awoiaf.westeros.org/images/thumb/f/f3/Night%27s_Watch.svg/500px-Night%27s_Watch.svg.png"
+        "src": "person.webp"
       }
     },
     {
       "id": "Alsubhi",
       "height": 50,
       "fill": {
-        "src": "https://awoiaf.westeros.org/images/thumb/3/31/House_Tyrell.svg/500px-House_Tyrell.svg.png"
+        "src": "person.webp"
       }
     },
     {
@@ -175,7 +175,7 @@
       "id": "Alotaibi",
       "height": 50,
       "fill": {
-        "src": "https://awoiaf.westeros.org/images/thumb/e/e1/House_Blackwood.svg/500px-House_Blackwood.svg.png"
+        "src": "person.webp"
       }
     }
   ],
