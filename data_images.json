@@ -117,7 +117,7 @@
       }
     },
     {
-      "id": "TMA",
+      "id": "TM Algebras",
       "height": 50,
       "fill": {
         "src": "https://awoiaf.westeros.org/images/thumb/2/24/Brave_Companions.svg/400px-Brave_Companions.svg.png"
@@ -131,7 +131,7 @@
       }
     },
     {
-      "id": "Baby",
+      "id": "Baby algebra",
       "height": 50,
       "fill": {
         "src": "https://awoiaf.westeros.org/images/thumb/7/75/House_Mallister.svg/500px-House_Mallister.svg.png"
@@ -190,15 +190,14 @@
   "edges": [
     { "from": "Partition-algebra", "to": "Blob-algebra" },
     { "from": "Partition-algebra", "to": "Match-categories" },
-    { "from": "Combinatorics", "to": "Partition-algebra" },
     { "from": "Partition-algebra", "to": "Potts-model" }, 
     { "from": "Match-categories", "to": "Potts-model" },
     { "from": "higher-gauge-theory", "to": "Blob-algebra" },
     { "from": "Blob-algebra", "to": "Combinatorics" },
     { "from": "Tiger categories", "to": "Blob-algebra" },
-    { "from": "Baby", "to": "Kadar-Yu" },
-    { "from": "TMA", "to": "Baby" },
-    { "from": "Baby", "to": "Combinatorics" },
+    { "from": "Baby algebra", "to": "Kadar-Yu" },
+    { "from": "Baby algebra", "to": "Combinatorics" },
+    { "from": "Combinatorics", "to": "Partition-algebra" },
     { "from": "Qadi", "to": "Match-categories" },
     { "from": "Qadi", "to": "Topological quantum tools" },
     { "from": "Horton", "to": "Topological quantum tools" },
@@ -210,17 +209,20 @@
     { "from": "Alotaibi", "to": "Kadar-Yu" },
     { "from": "Alotaibi", "to": "Blob-algebra" },
     { "from": "Kadar-Yu", "to": "Partition-algebra" },
-    { "from": "Peyen", "to": "Combinatorics" },
-    { "from": "TMA", "to": "Blob-algebra" },
-    { "from": "Computation", "to": "TMA" },
+    { "from": "Peyen", "to": "Combinatorics" },    
+    { "from": "Peyen", "to": "Statistical mechanics" },
+    { "from": "TM Algebras", "to": "Baby algebra" },
+    { "from": "TM Algebras", "to": "Blob-algebra" },
+    { "from": "TM Algebras", "to": "Statistical mechanics" },
+    { "from": "Computation", "to": "TM Algebras" },
     { "from": "Computation", "to": "Partition-algebra" },
     { "from": "Computation", "to": "Statistical mechanics" },
-    { "from": "Peyen", "to": "Statistical mechanics" },
-    { "from": "TMA", "to": "Statistical mechanics" },
     { "from": "Quantum groups", "to": "Schur-Weyl duality"},
     { "from": "Cluster algebras", "to": "Quantum groups"},
     { "from": "Palmer-Anghel", "to": "Quantum groups"},
-    { "from": "Schur-Weyl duality", "to": "Partition-algebra"},{ "from": "Associahedra", "to": "Cluster algebras"},
+    { "from": "Palmer-Anghel", "to": "Topological quantum tools"},
+    { "from": "Schur-Weyl duality", "to": "Partition-algebra"},
+    { "from": "Associahedra", "to": "Cluster algebras"},
     { "from": "", "to": ""},   
     { "from": "Fedele", "to": "Cluster algebras"},   
     { "from": "Morris", "to": "Kadar-Yu"},
