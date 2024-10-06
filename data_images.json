@@ -19,7 +19,15 @@
       "fill": {
         "src": "person.webp"
       }
-    },         {
+    },    
+        {
+      "id": "Palmer-Anghel",
+      "height": 50,
+      "fill": {
+        "src": "person.webp"
+      }
+    },     
+    {
       "id": "Morris",
       "height": 50,
       "fill": {
