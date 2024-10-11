@@ -14,6 +14,13 @@
       }
     },     
         {
+      "id": "Baur",
+      "height": 50,
+      "fill": {
+        "src": "person.webp"
+      }    
+        },
+        {
       "id": "Fedele",
       "height": 50,
       "fill": {
@@ -225,6 +232,7 @@
     { "from": "Associahedra", "to": "Cluster algebras"},
     { "from": "", "to": ""},   
     { "from": "Fedele", "to": "Cluster algebras"},   
+    { "from": "Baur", "to": "Cluster algebras"},   
     { "from": "Morris", "to": "Kadar-Yu"},
     { "from": "Statistical mechanics", "to": "Potts-model" }
   ]
