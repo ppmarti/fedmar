@@ -233,6 +233,7 @@
     { "from": "", "to": ""},   
     { "from": "Fedele", "to": "Cluster algebras"},   
     { "from": "Baur", "to": "Cluster algebras"},   
+    { "from": "Baur", "to": "Combinatorics"},   
     { "from": "Morris", "to": "Kadar-Yu"},
     { "from": "Statistical mechanics", "to": "Potts-model" }
   ]
