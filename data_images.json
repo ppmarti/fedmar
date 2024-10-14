@@ -200,6 +200,7 @@
     { "from": "Partition-algebra", "to": "Potts-model" }, 
     { "from": "Match-categories", "to": "Topological quantum tools" },
     { "from": "higher-gauge-theory", "to": "Blob-algebra" },
+    { "from": "higher-gauge-theory", "to": "Topological quantum tools" },
     { "from": "Blob-algebra", "to": "Combinatorics" },
     { "from": "Tiger categories", "to": "Blob-algebra" },
     { "from": "Baby algebra", "to": "Partition-algebra" },
