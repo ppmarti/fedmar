@@ -3,21 +3,9 @@
               { "id": "Quantum groups",      "height": 50,  "fill": {   "src": "idea.webp"   }   },     
               { "id": "Baur",                "height": 50,  "fill": {   "src": "person.webp" }   },
               { "id": "Fedele",              "height": 50,  "fill": {   "src": "person.webp" }   },    
-        {
-      "id": "Palmer-Anghel",
-      "height": 50,
-      "fill": {
-        "src": "person.webp"
-      }
-    },     
-    {
-      "id": "Morris",
-      "height": 50,
-      "fill": {
-        "src": "person.webp"
-      }
-    },        {
-      "id": "Cluster algebras",
+              { "id": "Palmer-Anghel",       "height": 50,  "fill": {   "src": "person.webp" }   },     
+              { "id": "Morris",              "height": 50,  "fill": {   "src": "person.webp" }   },     
+    {  "id": "Cluster algebras",
       "height": 50,
       "fill": {
         "src": "idea.webp"
@@ -177,6 +165,7 @@
     { "from": "Match-categories", "to": "Topological quantum tools" },
     { "from": "higher-gauge-theory", "to": "Blob-algebra" },
     { "from": "higher-gauge-theory", "to": "Topological quantum tools" },
+    { "from": "higher-gauge-theory", "to": "Extended categories" },
     { "from": "Blob-algebra", "to": "Combinatorics" },
     { "from": "Tiger categories", "to": "Blob-algebra" },
     { "from": "Baby algebra", "to": "Partition-algebra" },
