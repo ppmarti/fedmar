@@ -1,0 +1,308 @@
+{
+  "nodes": [
+    {
+      "id": "Idea 1",
+      "height": 50,
+      "fill": {
+        "src": "idea.webp"
+      }
+    },
+    {
+      "id": "Idea 2",
+      "height": 50,
+      "fill": {
+        "src": "idea.webp"
+      }
+    },
+    {
+      "id": "Idea 3",
+      "height": 50,
+      "fill": {
+        "src": "idea.webp"
+      }
+    },
+    {
+      "id": "Idea 4",
+      "height": 50,
+      "fill": {
+        "src": "idea.webp"
+      }
+    },
+    {
+      "id": "Idea 5",
+      "height": 50,
+      "fill": {
+        "src": "idea.webp"
+      }
+    },
+    {
+      "id": "Idea 6",
+      "height": 50,
+      "fill": {
+        "src": "idea.webp"
+      }
+    },
+    {
+      "id": "Idea 7",
+      "height": 50,
+      "fill": {
+        "src": "idea.webp"
+      }
+    },
+    {
+      "id": "Idea 8",
+      "height": 50,
+      "fill": {
+        "src": "idea.webp"
+      }
+    },
+    {
+      "id": "Person 1",
+      "height": 50,
+      "fill": {
+        "src": "person.webp"
+      }
+    },
+    {
+      "id": "Person 2",
+      "height": 50,
+      "fill": {
+        "src": "person.webp"
+      }
+    },
+    {
+      "id": "Person 3",
+      "height": 50,
+      "fill": {
+        "src": "person.webp"
+      }
+    },
+    {
+      "id": "Person 4",
+      "height": 50,
+      "fill": {
+        "src": "person.webp"
+      }
+    },
+    {
+      "id": "Person 5",
+      "height": 50,
+      "fill": {
+        "src": "person.webp"
+      }
+    },
+    {
+      "id": "Person 6",
+      "height": 50,
+      "fill": {
+        "src": "person.webp"
+      }
+    },
+    {
+      "id": "Person 7",
+      "height": 50,
+      "fill": {
+        "src": "person.webp"
+      }
+    },
+    {
+      "id": "Person 8",
+      "height": 50,
+      "fill": {
+        "src": "person.webp"
+      }
+    },
+    {
+      "id": "Person 9",
+      "height": 50,
+      "fill": {
+        "src": "person.webp"
+      }
+    },
+    {
+      "id": "Person 10",
+      "height": 50,
+      "fill": {
+        "src": "person.webp"
+      }
+    },
+    {
+      "id": "Person 11",
+      "height": 50,
+      "fill": {
+        "src": "person.webp"
+      }
+    },
+    {
+      "id": "Person 12",
+      "height": 50,
+      "fill": {
+        "src": "person.webp"
+      }
+    },
+    {
+      "id": "Person 13",
+      "height": 50,
+      "fill": {
+        "src": "person.webp"
+      }
+    },
+    {
+      "id": "Person 14",
+      "height": 50,
+      "fill": {
+        "src": "person.webp"
+      }
+    },
+    {
+      "id": "Person 15",
+      "height": 50,
+      "fill": {
+        "src": "person.webp"
+      }
+    },
+    {
+      "id": "Person 16",
+      "height": 50,
+      "fill": {
+        "src": "person.webp"
+      }
+    },
+    {
+      "id": "Person 17",
+      "height": 50,
+      "fill": {
+        "src": "person.webp"
+      }
+    },
+    {
+      "id": "Person 18",
+      "height": 50,
+      "fill": {
+        "src": "person.webp"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "Person 1",
+      "to": "Idea 8"
+    },
+    {
+      "from": "Person 1",
+      "to": "Idea 3"
+    },
+    {
+      "from": "Person 2",
+      "to": "Idea 7"
+    },
+    {
+      "from": "Person 3",
+      "to": "Idea 6"
+    },
+    {
+      "from": "Person 4",
+      "to": "Idea 8"
+    },
+    {
+      "from": "Person 5",
+      "to": "Idea 1"
+    },
+    {
+      "from": "Person 6",
+      "to": "Idea 5"
+    },
+    {
+      "from": "Person 6",
+      "to": "Idea 2"
+    },
+    {
+      "from": "Person 7",
+      "to": "Idea 8"
+    },
+    {
+      "from": "Person 8",
+      "to": "Idea 3"
+    },
+    {
+      "from": "Person 9",
+      "to": "Idea 4"
+    },
+    {
+      "from": "Person 10",
+      "to": "Idea 7"
+    },
+    {
+      "from": "Person 10",
+      "to": "Idea 6"
+    },
+    {
+      "from": "Person 11",
+      "to": "Idea 6"
+    },
+    {
+      "from": "Person 11",
+      "to": "Idea 7"
+    },
+    {
+      "from": "Person 12",
+      "to": "Idea 4"
+    },
+    {
+      "from": "Person 12",
+      "to": "Idea 5"
+    },
+    {
+      "from": "Person 13",
+      "to": "Idea 2"
+    },
+    {
+      "from": "Person 13",
+      "to": "Idea 4"
+    },
+    {
+      "from": "Person 13",
+      "to": "Idea 6"
+    },
+    {
+      "from": "Person 14",
+      "to": "Idea 1"
+    },
+    {
+      "from": "Person 14",
+      "to": "Idea 6"
+    },
+    {
+      "from": "Person 14",
+      "to": "Idea 8"
+    },
+    {
+      "from": "Person 15",
+      "to": "Idea 7"
+    },
+    {
+      "from": "Person 15",
+      "to": "Idea 3"
+    },
+    {
+      "from": "Person 15",
+      "to": "Idea 5"
+    },
+    {
+      "from": "Person 16",
+      "to": "Idea 4"
+    },
+    {
+      "from": "Person 17",
+      "to": "Idea 1"
+    },
+    {
+      "from": "Person 18",
+      "to": "Idea 7"
+    },
+    {
+      "from": "Person 18",
+      "to": "Idea 2"
+    }
+  ]
+}

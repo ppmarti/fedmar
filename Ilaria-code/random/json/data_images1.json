@@ -1,0 +1,125 @@
+{
+  "nodes": [
+    {
+      "id": "Idea 1",
+      "height": 50,
+      "fill": {
+        "src": "idea.webp"
+      }
+    },
+    {
+      "id": "Idea 2",
+      "height": 50,
+      "fill": {
+        "src": "idea.webp"
+      }
+    },
+    {
+      "id": "Idea 3",
+      "height": 50,
+      "fill": {
+        "src": "idea.webp"
+      }
+    },
+    {
+      "id": "Idea 4",
+      "height": 50,
+      "fill": {
+        "src": "idea.webp"
+      }
+    },
+    {
+      "id": "Idea 5",
+      "height": 50,
+      "fill": {
+        "src": "idea.webp"
+      }
+    },
+    {
+      "id": "Idea 6",
+      "height": 50,
+      "fill": {
+        "src": "idea.webp"
+      }
+    },
+    {
+      "id": "Idea 7",
+      "height": 50,
+      "fill": {
+        "src": "idea.webp"
+      }
+    },
+    {
+      "id": "Person 1",
+      "height": 50,
+      "fill": {
+        "src": "person.webp"
+      }
+    },
+    {
+      "id": "Person 2",
+      "height": 50,
+      "fill": {
+        "src": "person.webp"
+      }
+    },
+    {
+      "id": "Person 3",
+      "height": 50,
+      "fill": {
+        "src": "person.webp"
+      }
+    },
+    {
+      "id": "Person 4",
+      "height": 50,
+      "fill": {
+        "src": "person.webp"
+      }
+    },
+    {
+      "id": "Person 5",
+      "height": 50,
+      "fill": {
+        "src": "person.webp"
+      }
+    },
+    {
+      "id": "Person 6",
+      "height": 50,
+      "fill": {
+        "src": "person.webp"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "Person 1",
+      "to": "Idea 2"
+    },
+    {
+      "from": "Person 2",
+      "to": "Idea 3"
+    },
+    {
+      "from": "Person 3",
+      "to": "Idea 6"
+    },
+    {
+      "from": "Person 3",
+      "to": "Idea 5"
+    },
+    {
+      "from": "Person 4",
+      "to": "Idea 7"
+    },
+    {
+      "from": "Person 5",
+      "to": "Idea 7"
+    },
+    {
+      "from": "Person 6",
+      "to": "Idea 4"
+    }
+  ]
+}

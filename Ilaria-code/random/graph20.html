@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 600px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "skyblue", "id": "Idea 1", "label": "Idea 1", "physics": false, "shape": "dot", "title": "Idea 1"}, {"color": "skyblue", "id": "Idea 2", "label": "Idea 2", "physics": false, "shape": "dot", "title": "Idea 2"}, {"color": "skyblue", "id": "Idea 3", "label": "Idea 3", "physics": false, "shape": "dot", "title": "Idea 3"}, {"color": "skyblue", "id": "Idea 4", "label": "Idea 4", "physics": false, "shape": "dot", "title": "Idea 4"}, {"color": "skyblue", "id": "Idea 5", "label": "Idea 5", "physics": false, "shape": "dot", "title": "Idea 5"}, {"color": "skyblue", "id": "Idea 6", "label": "Idea 6", "physics": false, "shape": "dot", "title": "Idea 6"}, {"color": "skyblue", "id": "Idea 7", "label": "Idea 7", "physics": false, "shape": "dot", "title": "Idea 7"}, {"color": "skyblue", "id": "Idea 8", "label": "Idea 8", "physics": false, "shape": "dot", "title": "Idea 8"}, {"color": "skyblue", "id": "Idea 9", "label": "Idea 9", "physics": false, "shape": "dot", "title": "Idea 9"}, {"color": "skyblue", "id": "Idea 10", "label": "Idea 10", "physics": false, "shape": "dot", "title": "Idea 10"}, {"color": "skyblue", "id": "Idea 11", "label": "Idea 11", "physics": false, "shape": "dot", "title": "Idea 11"}, {"color": "skyblue", "id": "Idea 12", "label": "Idea 12", "physics": false, "shape": "dot", "title": "Idea 12"}, {"color": "skyblue", "id": "Idea 13", "label": "Idea 13", "physics": false, "shape": "dot", "title": "Idea 13"}, {"color": "skyblue", "id": "Idea 14", "label": "Idea 14", "physics": false, "shape": "dot", "title": "Idea 14"}, {"color": "skyblue", "id": "Idea 15", "label": "Idea 15", "physics": false, "shape": "dot", "title": "Idea 15"}, {"color": "skyblue", "id": "Idea 16", "label": "Idea 16", "physics": false, "shape": "dot", "title": "Idea 16"}, {"color": "skyblue", "id": "Idea 17", "label": "Idea 17", "physics": false, "shape": "dot", "title": "Idea 17"}, {"color": "skyblue", "id": "Idea 18", "label": "Idea 18", "physics": false, "shape": "dot", "title": "Idea 18"}, {"color": "lightcoral", "id": "Person 1", "label": "Person 1", "physics": false, "shape": "dot", "title": "Person 1"}, {"color": "lightcoral", "id": "Person 2", "label": "Person 2", "physics": false, "shape": "dot", "title": "Person 2"}, {"color": "lightcoral", "id": "Person 3", "label": "Person 3", "physics": false, "shape": "dot", "title": "Person 3"}, {"color": "lightcoral", "id": "Person 4", "label": "Person 4", "physics": false, "shape": "dot", "title": "Person 4"}, {"color": "lightcoral", "id": "Person 5", "label": "Person 5", "physics": false, "shape": "dot", "title": "Person 5"}, {"color": "lightcoral", "id": "Person 6", "label": "Person 6", "physics": false, "shape": "dot", "title": "Person 6"}, {"color": "lightcoral", "id": "Person 7", "label": "Person 7", "physics": false, "shape": "dot", "title": "Person 7"}, {"color": "lightcoral", "id": "Person 8", "label": "Person 8", "physics": false, "shape": "dot", "title": "Person 8"}, {"color": "lightcoral", "id": "Person 9", "label": "Person 9", "physics": false, "shape": "dot", "title": "Person 9"}, {"color": "lightcoral", "id": "Person 10", "label": "Person 10", "physics": false, "shape": "dot", "title": "Person 10"}, {"color": "lightcoral", "id": "Person 11", "label": "Person 11", "physics": false, "shape": "dot", "title": "Person 11"}, {"color": "lightcoral", "id": "Person 12", "label": "Person 12", "physics": false, "shape": "dot", "title": "Person 12"}, {"color": "lightcoral", "id": "Person 13", "label": "Person 13", "physics": false, "shape": "dot", "title": "Person 13"}, {"color": "lightcoral", "id": "Person 14", "label": "Person 14", "physics": false, "shape": "dot", "title": "Person 14"}, {"color": "lightcoral", "id": "Person 15", "label": "Person 15", "physics": false, "shape": "dot", "title": "Person 15"}, {"color": "lightcoral", "id": "Person 16", "label": "Person 16", "physics": false, "shape": "dot", "title": "Person 16"}, {"color": "lightcoral", "id": "Person 17", "label": "Person 17", "physics": false, "shape": "dot", "title": "Person 17"}, {"color": "lightcoral", "id": "Person 18", "label": "Person 18", "physics": false, "shape": "dot", "title": "Person 18"}, {"color": "lightcoral", "id": "Person 19", "label": "Person 19", "physics": false, "shape": "dot", "title": "Person 19"}, {"color": "lightcoral", "id": "Person 20", "label": "Person 20", "physics": false, "shape": "dot", "title": "Person 20"}]);
+                  edges = new vis.DataSet([{"color": "gray", "from": "Person 1", "smooth": false, "to": "Idea 16"}, {"color": "gray", "from": "Person 1", "smooth": false, "to": "Idea 12"}, {"color": "gray", "from": "Person 2", "smooth": false, "to": "Idea 14"}, {"color": "gray", "from": "Person 2", "smooth": false, "to": "Idea 1"}, {"color": "gray", "from": "Person 3", "smooth": false, "to": "Idea 7"}, {"color": "gray", "from": "Person 4", "smooth": false, "to": "Idea 4"}, {"color": "gray", "from": "Person 4", "smooth": false, "to": "Idea 16"}, {"color": "gray", "from": "Person 5", "smooth": false, "to": "Idea 13"}, {"color": "gray", "from": "Person 5", "smooth": false, "to": "Idea 1"}, {"color": "gray", "from": "Person 5", "smooth": false, "to": "Idea 5"}, {"color": "gray", "from": "Person 6", "smooth": false, "to": "Idea 15"}, {"color": "gray", "from": "Person 6", "smooth": false, "to": "Idea 9"}, {"color": "gray", "from": "Person 6", "smooth": false, "to": "Idea 10"}, {"color": "gray", "from": "Person 7", "smooth": false, "to": "Idea 10"}, {"color": "gray", "from": "Person 8", "smooth": false, "to": "Idea 4"}, {"color": "gray", "from": "Person 9", "smooth": false, "to": "Idea 4"}, {"color": "gray", "from": "Person 9", "smooth": false, "to": "Idea 10"}, {"color": "gray", "from": "Person 10", "smooth": false, "to": "Idea 10"}, {"color": "gray", "from": "Person 10", "smooth": false, "to": "Idea 16"}, {"color": "gray", "from": "Person 11", "smooth": false, "to": "Idea 4"}, {"color": "gray", "from": "Person 11", "smooth": false, "to": "Idea 7"}, {"color": "gray", "from": "Person 12", "smooth": false, "to": "Idea 1"}, {"color": "gray", "from": "Person 12", "smooth": false, "to": "Idea 10"}, {"color": "gray", "from": "Person 12", "smooth": false, "to": "Idea 18"}, {"color": "gray", "from": "Person 13", "smooth": false, "to": "Idea 7"}, {"color": "gray", "from": "Person 14", "smooth": false, "to": "Idea 2"}, {"color": "gray", "from": "Person 14", "smooth": false, "to": "Idea 8"}, {"color": "gray", "from": "Person 15", "smooth": false, "to": "Idea 10"}, {"color": "gray", "from": "Person 15", "smooth": false, "to": "Idea 4"}, {"color": "gray", "from": "Person 16", "smooth": false, "to": "Idea 11"}, {"color": "gray", "from": "Person 16", "smooth": false, "to": "Idea 4"}, {"color": "gray", "from": "Person 16", "smooth": false, "to": "Idea 3"}, {"color": "gray", "from": "Person 17", "smooth": false, "to": "Idea 18"}, {"color": "gray", "from": "Person 18", "smooth": false, "to": "Idea 5"}, {"color": "gray", "from": "Person 19", "smooth": false, "to": "Idea 9"}, {"color": "gray", "from": "Person 19", "smooth": false, "to": "Idea 17"}, {"color": "gray", "from": "Person 20", "smooth": false, "to": "Idea 17"}, {"color": "gray", "from": "Person 20", "smooth": false, "to": "Idea 10"}, {"color": "gray", "from": "Person 20", "smooth": false, "to": "Idea 13"}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": false,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,247 @@
+{
+  "nodes": [
+    {
+      "id": "Idea 1",
+      "height": 50,
+      "fill": {
+        "src": "idea.webp"
+      }
+    },
+    {
+      "id": "Idea 2",
+      "height": 50,
+      "fill": {
+        "src": "idea.webp"
+      }
+    },
+    {
+      "id": "Idea 3",
+      "height": 50,
+      "fill": {
+        "src": "idea.webp"
+      }
+    },
+    {
+      "id": "Idea 4",
+      "height": 50,
+      "fill": {
+        "src": "idea.webp"
+      }
+    },
+    {
+      "id": "Idea 5",
+      "height": 50,
+      "fill": {
+        "src": "idea.webp"
+      }
+    },
+    {
+      "id": "Idea 6",
+      "height": 50,
+      "fill": {
+        "src": "idea.webp"
+      }
+    },
+    {
+      "id": "Idea 7",
+      "height": 50,
+      "fill": {
+        "src": "idea.webp"
+      }
+    },
+    {
+      "id": "Idea 8",
+      "height": 50,
+      "fill": {
+        "src": "idea.webp"
+      }
+    },
+    {
+      "id": "Idea 9",
+      "height": 50,
+      "fill": {
+        "src": "idea.webp"
+      }
+    },
+    {
+      "id": "Idea 10",
+      "height": 50,
+      "fill": {
+        "src": "idea.webp"
+      }
+    },
+    {
+      "id": "Idea 11",
+      "height": 50,
+      "fill": {
+        "src": "idea.webp"
+      }
+    },
+    {
+      "id": "Idea 12",
+      "height": 50,
+      "fill": {
+        "src": "idea.webp"
+      }
+    },
+    {
+      "id": "Idea 13",
+      "height": 50,
+      "fill": {
+        "src": "idea.webp"
+      }
+    },
+    {
+      "id": "Idea 14",
+      "height": 50,
+      "fill": {
+        "src": "idea.webp"
+      }
+    },
+    {
+      "id": "Idea 15",
+      "height": 50,
+      "fill": {
+        "src": "idea.webp"
+      }
+    },
+    {
+      "id": "Idea 16",
+      "height": 50,
+      "fill": {
+        "src": "idea.webp"
+      }
+    },
+    {
+      "id": "Idea 17",
+      "height": 50,
+      "fill": {
+        "src": "idea.webp"
+      }
+    },
+    {
+      "id": "Idea 18",
+      "height": 50,
+      "fill": {
+        "src": "idea.webp"
+      }
+    },
+    {
+      "id": "Idea 19",
+      "height": 50,
+      "fill": {
+        "src": "idea.webp"
+      }
+    },
+    {
+      "id": "Idea 20",
+      "height": 50,
+      "fill": {
+        "src": "idea.webp"
+      }
+    },
+    {
+      "id": "Idea 21",
+      "height": 50,
+      "fill": {
+        "src": "idea.webp"
+      }
+    },
+    {
+      "id": "Idea 22",
+      "height": 50,
+      "fill": {
+        "src": "idea.webp"
+      }
+    },
+    {
+      "id": "Person 1",
+      "height": 50,
+      "fill": {
+        "src": "person.webp"
+      }
+    },
+    {
+      "id": "Person 2",
+      "height": 50,
+      "fill": {
+        "src": "person.webp"
+      }
+    },
+    {
+      "id": "Person 3",
+      "height": 50,
+      "fill": {
+        "src": "person.webp"
+      }
+    },
+    {
+      "id": "Person 4",
+      "height": 50,
+      "fill": {
+        "src": "person.webp"
+      }
+    },
+    {
+      "id": "Person 5",
+      "height": 50,
+      "fill": {
+        "src": "person.webp"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "Person 1",
+      "to": "Idea 1"
+    },
+    {
+      "from": "Person 1",
+      "to": "Idea 11"
+    },
+    {
+      "from": "Person 1",
+      "to": "Idea 5"
+    },
+    {
+      "from": "Person 2",
+      "to": "Idea 5"
+    },
+    {
+      "from": "Person 2",
+      "to": "Idea 10"
+    },
+    {
+      "from": "Person 3",
+      "to": "Idea 12"
+    },
+    {
+      "from": "Person 3",
+      "to": "Idea 10"
+    },
+    {
+      "from": "Person 3",
+      "to": "Idea 1"
+    },
+    {
+      "from": "Person 4",
+      "to": "Idea 5"
+    },
+    {
+      "from": "Person 4",
+      "to": "Idea 14"
+    },
+    {
+      "from": "Person 5",
+      "to": "Idea 12"
+    },
+    {
+      "from": "Person 5",
+      "to": "Idea 18"
+    },
+    {
+      "from": "Person 5",
+      "to": "Idea 15"
+    }
+  ]
+}
