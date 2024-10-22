@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 600px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "skyblue", "id": "Schur-Weyl duality", "label": "Schur-Weyl duality", "physics": false, "shape": "dot", "title": "Schur-Weyl duality"}, {"color": "skyblue", "id": "Quantum groups", "label": "Quantum groups", "physics": false, "shape": "dot", "title": "Quantum groups"}, {"color": "skyblue", "id": "Cluster algebras", "label": "Cluster algebras", "physics": false, "shape": "dot", "title": "Cluster algebras"}, {"color": "skyblue", "id": "Associahedra", "label": "Associahedra", "physics": false, "shape": "dot", "title": "Associahedra"}, {"color": "skyblue", "id": "Partition-algebra", "label": "Partition-algebra", "physics": false, "shape": "dot", "title": "Partition-algebra"}, {"color": "skyblue", "id": "Topological quantum tools", "label": "Topological quantum tools", "physics": false, "shape": "dot", "title": "Topological quantum tools"}, {"color": "skyblue", "id": "Statistical mechanics", "label": "Statistical mechanics", "physics": false, "shape": "dot", "title": "Statistical mechanics"}, {"color": "skyblue", "id": "Blob-algebra", "label": "Blob-algebra", "physics": false, "shape": "dot", "title": "Blob-algebra"}, {"color": "skyblue", "id": "Match-categories", "label": "Match-categories", "physics": false, "shape": "dot", "title": "Match-categories"}, {"color": "skyblue", "id": "Combinatorics", "label": "Combinatorics", "physics": false, "shape": "dot", "title": "Combinatorics"}, {"color": "skyblue", "id": "higher-gauge-theory", "label": "higher-gauge-theory", "physics": false, "shape": "dot", "title": "higher-gauge-theory"}, {"color": "skyblue", "id": "Potts-model", "label": "Potts-model", "physics": false, "shape": "dot", "title": "Potts-model"}, {"color": "skyblue", "id": "Tiger categories", "label": "Tiger categories", "physics": false, "shape": "dot", "title": "Tiger categories"}, {"color": "skyblue", "id": "Computation", "label": "Computation", "physics": false, "shape": "dot", "title": "Computation"}, {"color": "skyblue", "id": "TM Algebras", "label": "TM Algebras", "physics": false, "shape": "dot", "title": "TM Algebras"}, {"color": "skyblue", "id": "Kadar-Yu", "label": "Kadar-Yu", "physics": false, "shape": "dot", "title": "Kadar-Yu"}, {"color": "skyblue", "id": "Baby algebra", "label": "Baby algebra", "physics": false, "shape": "dot", "title": "Baby algebra"}, {"color": "skyblue", "id": "Extended categories", "label": "Extended categories", "physics": false, "shape": "dot", "title": "Extended categories"}, {"color": "lightcoral", "id": "Baur", "label": "Baur", "physics": false, "shape": "dot", "title": "Baur"}, {"color": "lightcoral", "id": "Fedele", "label": "Fedele", "physics": false, "shape": "dot", "title": "Fedele"}, {"color": "lightcoral", "id": "Palmer-Anghel", "label": "Palmer-Anghel", "physics": false, "shape": "dot", "title": "Palmer-Anghel"}, {"color": "lightcoral", "id": "Morris", "label": "Morris", "physics": false, "shape": "dot", "title": "Morris"}, {"color": "lightcoral", "id": "Qadi", "label": "Qadi", "physics": false, "shape": "dot", "title": "Qadi"}, {"color": "lightcoral", "id": "Peyen", "label": "Peyen", "physics": false, "shape": "dot", "title": "Peyen"}, {"color": "lightcoral", "id": "Alsubhi", "label": "Alsubhi", "physics": false, "shape": "dot", "title": "Alsubhi"}, {"color": "lightcoral", "id": "Almateari", "label": "Almateari", "physics": false, "shape": "dot", "title": "Almateari"}, {"color": "lightcoral", "id": "Horton", "label": "Horton", "physics": false, "shape": "dot", "title": "Horton"}, {"color": "lightcoral", "id": "Alotaibi", "label": "Alotaibi", "physics": false, "shape": "dot", "title": "Alotaibi"}]);
+                  edges = new vis.DataSet([{"color": "gray", "from": "Partition-algebra", "smooth": false, "to": "Blob-algebra"}, {"color": "gray", "from": "Partition-algebra", "smooth": false, "to": "Match-categories"}, {"color": "gray", "from": "Partition-algebra", "smooth": false, "to": "Potts-model"}, {"color": "gray", "from": "Match-categories", "smooth": false, "to": "Topological quantum tools"}, {"color": "gray", "from": "higher-gauge-theory", "smooth": false, "to": "Blob-algebra"}, {"color": "gray", "from": "higher-gauge-theory", "smooth": false, "to": "Topological quantum tools"}, {"color": "gray", "from": "Blob-algebra", "smooth": false, "to": "Combinatorics"}, {"color": "gray", "from": "Tiger categories", "smooth": false, "to": "Blob-algebra"}, {"color": "gray", "from": "Baby algebra", "smooth": false, "to": "Partition-algebra"}, {"color": "gray", "from": "Baby algebra", "smooth": false, "to": "Combinatorics"}, {"color": "gray", "from": "Combinatorics", "smooth": false, "to": "Partition-algebra"}, {"color": "gray", "from": "Qadi", "smooth": false, "to": "Match-categories"}, {"color": "gray", "from": "Qadi", "smooth": false, "to": "Topological quantum tools"}, {"color": "gray", "from": "Horton", "smooth": false, "to": "Topological quantum tools"}, {"color": "gray", "from": "Horton", "smooth": false, "to": "Extended categories"}, {"color": "gray", "from": "Horton", "smooth": false, "to": "Baby algebra"}, {"color": "gray", "from": "Almateari", "smooth": false, "to": "Match-categories"}, {"color": "gray", "from": "Alsubhi", "smooth": false, "to": "Combinatorics"}, {"color": "gray", "from": "Alsubhi", "smooth": false, "to": "Partition-algebra"}, {"color": "gray", "from": "Alotaibi", "smooth": false, "to": "Kadar-Yu"}, {"color": "gray", "from": "Alotaibi", "smooth": false, "to": "Blob-algebra"}, {"color": "gray", "from": "Kadar-Yu", "smooth": false, "to": "Partition-algebra"}, {"color": "gray", "from": "Peyen", "smooth": false, "to": "Combinatorics"}, {"color": "gray", "from": "Peyen", "smooth": false, "to": "Statistical mechanics"}, {"color": "gray", "from": "TM Algebras", "smooth": false, "to": "Partition-algebra"}, {"color": "gray", "from": "TM Algebras", "smooth": false, "to": "Blob-algebra"}, {"color": "gray", "from": "TM Algebras", "smooth": false, "to": "Statistical mechanics"}, {"color": "gray", "from": "Computation", "smooth": false, "to": "TM Algebras"}, {"color": "gray", "from": "Computation", "smooth": false, "to": "Partition-algebra"}, {"color": "gray", "from": "Computation", "smooth": false, "to": "Statistical mechanics"}, {"color": "gray", "from": "Quantum groups", "smooth": false, "to": "Schur-Weyl duality"}, {"color": "gray", "from": "Cluster algebras", "smooth": false, "to": "Quantum groups"}, {"color": "gray", "from": "Palmer-Anghel", "smooth": false, "to": "Quantum groups"}, {"color": "gray", "from": "Palmer-Anghel", "smooth": false, "to": "Topological quantum tools"}, {"color": "gray", "from": "Schur-Weyl duality", "smooth": false, "to": "Partition-algebra"}, {"color": "gray", "from": "Associahedra", "smooth": false, "to": "Cluster algebras"}, {"color": "gray", "from": "Fedele", "smooth": false, "to": "Cluster algebras"}, {"color": "gray", "from": "Baur", "smooth": false, "to": "Cluster algebras"}, {"color": "gray", "from": "Baur", "smooth": false, "to": "Combinatorics"}, {"color": "gray", "from": "Morris", "smooth": false, "to": "Kadar-Yu"}, {"color": "gray", "from": "Statistical mechanics", "smooth": false, "to": "Potts-model"}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": false,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

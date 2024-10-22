@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 600px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "lightcoral", "id": "Ben Morris", "label": "Ben Morris", "shape": "dot", "title": "PhD student"}, {"color": "skyblue", "id": "Diagram Categories", "label": "Diagram Categories", "shape": "dot", "title": "self explanatory"}, {"color": "lightcoral", "id": "Karin Baur", "label": "Karin Baur", "shape": "dot", "title": "Academic Staff"}, {"color": "skyblue", "id": "\"surface algebras\"", "label": "\"surface algebras\"", "shape": "dot", "title": "I suggest to replace \"cluster algebras\" with \"cluster theory\""}, {"color": "lightcoral", "id": "Eleonore Faber", "label": "Eleonore Faber", "shape": "dot", "title": "Academic Staff"}, {"color": "skyblue", "id": "Friezes", "label": "Friezes", "shape": "dot", "title": "Friezes are grids of numbers satisfying a determinantal condition. Our goal is to understand algebraic properties of these objects (in particular, in connection with cluster algebras and categories)."}, {"color": "lightcoral", "id": "Bethany Marsh", "label": "Bethany Marsh", "shape": "dot", "title": "Academic Staff"}, {"color": "skyblue", "id": "Braid groups", "label": "Braid groups", "shape": "dot", "title": "Complex reflection groups, group presentations, cluster algebras, triangulations, orbifolds, fundamental group, mutation"}, {"color": "lightcoral", "id": "paul martin", "label": "paul martin", "shape": "dot", "title": "Academic Staff"}, {"color": "skyblue", "id": "stat-mech computation", "label": "stat-mech computation", "shape": "dot", "title": "This is a hybrid of Statistical Mechanics as topic and Computation as a meta-topic understood (perhaps by a link) to be in service of Stat Mech - since giving two topics is not an option on the form, but it doesn\u0027t really feel like either one is a sub-topic of the other. (And assuming here that the old topics from the GoT graphs might not be included automatically.)"}, {"color": "lightcoral", "id": "Ilaria Colazzo", "label": "Ilaria Colazzo", "shape": "dot", "title": "Academic Staff"}, {"color": "skyblue", "id": "Yang-Baxter equation", "label": "Yang-Baxter equation", "shape": "dot", "title": "Key equation in different areas of pure mathematics"}, {"color": "lightcoral", "id": "Francesca Fedele", "label": "Francesca Fedele", "shape": "dot", "title": "Postdoc"}, {"color": "skyblue", "id": "Auslander-Reiten theory", "label": "Auslander-Reiten theory", "shape": "dot", "title": "This is an important tool used to study abelian and triangulated categories (and some generalisations of these) by breaking them in the ``building blocks\u0027\u0027 of both their objects and morphisms. Some key words: A-R translate, A-R sequences and triangles, A-R quiver"}, {"color": "lightcoral", "id": "Emine Y\u0131ld\u0131r\u0131m ", "label": "Emine Y\u0131ld\u0131r\u0131m ", "shape": "dot", "title": "Postdoc"}, {"color": "skyblue", "id": "Path algebras", "label": "Path algebras", "shape": "dot", "title": "I work with algebras created from directed graphs and explore the representation theory of these types of algebras."}, {"color": "lightcoral", "id": "Michael Wibmer", "label": "Michael Wibmer", "shape": "dot", "title": "Academic Staff"}, {"color": "skyblue", "id": "Differential algebra", "label": "Differential algebra", "shape": "dot", "title": "Algebraic theory of differential equations"}, {"color": "lightcoral", "id": "Amit Hazi", "label": "Amit Hazi", "shape": "dot", "title": "Postdoc"}, {"color": "skyblue", "id": "Kazhdan-Lusztig", "label": "Kazhdan-Lusztig", "shape": "dot", "title": "Representation theory governed by Kazhdan-Lusztig combinatorics and their categorifications"}, {"color": "lightcoral", "id": "Martin Palmer-Anghel", "label": "Martin Palmer-Anghel", "shape": "dot", "title": "Academic Staff"}, {"color": "skyblue", "id": "Homological representations", "label": "Homological representations", "shape": "dot", "title": "Constructing and studying the properties (kernels, irreducibility, ...) of representations of mapping class groups and of motion groups (braid groups, surface braid groups, loop braid groups, etc) via their actions on the homology of associated configuration spaces or other moduli spaces."}]);
+                  edges = new vis.DataSet([{"from": "Ben Morris", "to": "Diagram Categories"}, {"from": "Karin Baur", "to": "\"surface algebras\""}, {"from": "Eleonore Faber", "to": "Friezes"}, {"from": "Bethany Marsh", "to": "Braid groups"}, {"from": "paul martin", "to": "stat-mech computation"}, {"from": "Ilaria Colazzo", "to": "Yang-Baxter equation"}, {"from": "Francesca Fedele", "to": "Auslander-Reiten theory"}, {"from": "Emine Y\u0131ld\u0131r\u0131m ", "to": "Path algebras"}, {"from": "Michael Wibmer", "to": "Differential algebra"}, {"from": "Amit Hazi", "to": "Kazhdan-Lusztig"}, {"from": "Martin Palmer-Anghel", "to": "Homological representations"}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
