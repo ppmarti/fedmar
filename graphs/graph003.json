@@ -32,6 +32,7 @@
               { "id": "Alsubhi",             "height": 50,  "fill": {  "src": "person.webp"  }   },
               { "id": "Almateari",           "height": 50,  "fill": {  "src": "person.webp"  }   },
               { "id": "Horton",              "height": 50,     "fill": {    "src": "person.webp"  }  },
+              { "id": "Mia",              "height": 50,     "fill": {    "src": "person.webp"  }  },
               { "id": "Alotaibi",            "height": 50,  "fill": {  "src": "person.webp"  }   }
   ],
   "edges": [
@@ -57,6 +58,7 @@
     { "from": "Alsubhi", "to": "Combinatorics" },
     { "from": "Alsubhi", "to": "Partition-algebra" },
     { "from": "Alotaibi", "to": "Kadar-Yu" },
+    { "from": "Mia", "to": "Kadar-Yu" },
     { "from": "Alotaibi", "to": "Blob-algebra" },
     { "from": "Kadar-Yu", "to": "Partition-algebra" },
     { "from": "Kadar-Yu", "to": "Geometric algebra" },
