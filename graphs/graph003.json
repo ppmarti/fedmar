@@ -48,7 +48,7 @@
     { "from": "Baby algebra", "to": "Partition-algebra" },
     { "from": "Baby algebra", "to": "Combinatorics" },
     { "from": "Combinatorics", "to": "Partition-algebra" },
-    { "from": "Qadi", "to": "Match-categories" },
+    { "from": "Qadi", "to": "Geometric algebra" },
     { "from": "Qadi", "to": "Topological quantum tools" },
     { "from": "Horton", "to": "Topological quantum tools" },
     { "from": "Horton", "to": "Extended categories" },
