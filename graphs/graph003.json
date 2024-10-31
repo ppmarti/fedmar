@@ -7,6 +7,7 @@
               { "id": "Fedele",              "height": 50,  "fill": {   "src": "person.webp" }   },    
               { "id": "Palmer-Anghel",       "height": 50,  "fill": {   "src": "person.webp" }   },     
               { "id": "Morris",              "height": 50,  "fill": {   "src": "person.webp" }   },     
+              { "id": "Martin",              "height": 50,  "fill": {   "src": "person.webp" }   },     
               { "id": "Cluster algebras",    "height": 50,  "fill": {   "src": "idea.webp"   }   },  
               { "id": "Cluster theories",    "height": 50,  "fill": {   "src": "idea.webp"   }   },  
               { "id": "Associahedra",        "height": 50,  "fill": {   "src": "idea.webp"   }   },
@@ -91,6 +92,7 @@
     { "from": "Baur", "to": "Combinatorics"},   
     { "from": "Morris", "to": "Kadar-Yu"},
     { "from": "Morris", "to": "Geometric algebra"},
+    { "from": "Martin", "to": "TM Algebras"},
     { "from": "Statistical mechanics", "to": "Potts-model" }
   ]
 }
