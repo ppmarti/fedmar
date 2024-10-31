@@ -65,6 +65,7 @@
     { "from": "Kadar-Yu", "to": "Partition-algebra" },
     { "from": "Kadar-Yu", "to": "Geometric algebra" },
     { "from": "Hazi", "to": "Geometric algebra" },
+    { "from": "Hazi", "to": "Blob-algebra" },
     { "from": "Peyen", "to": "Combinatorics" },    
     { "from": "Peyen", "to": "Statistical mechanics" },
     { "from": "TM Algebras", "to": "Partition-algebra" },
@@ -85,6 +86,7 @@
     { "from": "Baur", "to": "Cluster theories"},   
     { "from": "Baur", "to": "Combinatorics"},   
     { "from": "Morris", "to": "Kadar-Yu"},
+    { "from": "Morris", "to": "Geometric algebra"},
     { "from": "Statistical mechanics", "to": "Potts-model" }
   ]
 }
